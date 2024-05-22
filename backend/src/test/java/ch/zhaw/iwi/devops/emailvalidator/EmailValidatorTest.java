@@ -46,4 +46,10 @@ public class EmailValidatorTest {
         EmailValidator emailValidator = new EmailValidator();
         Assertions.assertFalse(emailValidator.isValid("pascal@aigner.ch."));
     }
+
+    @Test
+    public void testEmailWithMultipleDotsInDomain() {
+        EmailValidator emailValidator = new EmailValidator();
+        Assertions.assertTrue(emailValidator.isValid("pascal@sub.aigner.ch"));
+    }
 }
