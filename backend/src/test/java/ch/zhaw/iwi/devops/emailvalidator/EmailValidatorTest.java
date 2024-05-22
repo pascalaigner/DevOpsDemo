@@ -52,4 +52,9 @@ public class EmailValidatorTest {
         EmailValidator emailValidator = new EmailValidator();
         Assertions.assertTrue(emailValidator.isValid("pascal@sub.aigner.ch"));
     }
+
+    public void testEmailWithMissingDomain() {
+        EmailValidator emailValidator = new EmailValidator();
+        Assertions.assertFalse(emailValidator.isValid("pascal@.ch"));
+    }
 }
