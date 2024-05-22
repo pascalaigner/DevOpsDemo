@@ -11,6 +11,6 @@ public class EmailValidator {
         }
         int atPosition = email.indexOf('@');
         int dotPosition = email.lastIndexOf('.');
-        return atPosition > 0 && dotPosition > atPosition && dotPosition < email.length() - 1;
+        return atPosition > 0 && dotPosition > atPosition + 1 && dotPosition < email.length() - 1;
     }
 }
