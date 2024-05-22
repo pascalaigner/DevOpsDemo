@@ -10,4 +10,10 @@ public class EmailValidatorTest {
         EmailValidator emailValidator = new EmailValidator();
         Assertions.assertTrue(emailValidator.isValid("pascal@aigner.ch"));
     }
+
+    @Test
+    public void testNullEmail() {
+        EmailValidator emailValidator = new EmailValidator();
+        Assertions.assertFalse(emailValidator.isValid(null));
+    }
 }
