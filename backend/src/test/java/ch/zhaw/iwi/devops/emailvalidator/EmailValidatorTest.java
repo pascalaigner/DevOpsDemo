@@ -8,6 +8,6 @@ public class EmailValidatorTest {
     @Test
     public void testEmailContainingAtSymbol() {
         EmailValidator emailValidator = new EmailValidator();
-        Assertions.assertTrue(emailValidator.isValid("test@example.com"));
+        Assertions.assertTrue(emailValidator.isValid("pascal@aigner.ch"));
     }
 }
