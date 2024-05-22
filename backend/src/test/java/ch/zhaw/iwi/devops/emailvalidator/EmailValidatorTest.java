@@ -28,4 +28,10 @@ public class EmailValidatorTest {
         EmailValidator emailValidator = new EmailValidator();
         Assertions.assertFalse(emailValidator.isValid("pascal@"));
     }
+
+    @Test
+    public void testEmailWithDotInDomain() {
+        EmailValidator emailValidator = new EmailValidator();
+        Assertions.assertFalse(emailValidator.isValid("pascal@aignerch"));
+    }
 }
