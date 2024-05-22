@@ -6,6 +6,7 @@ public class EmailValidator {
         if (email == null || email.isEmpty()) {
             return false;
         }
-        return email.contains("@");
+        int atPosition = email.indexOf('@');
+        return atPosition > 0 && atPosition < email.length() - 1;
     }
 }
