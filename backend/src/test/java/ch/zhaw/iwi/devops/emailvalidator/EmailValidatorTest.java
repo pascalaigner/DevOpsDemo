@@ -34,4 +34,10 @@ public class EmailValidatorTest {
         EmailValidator emailValidator = new EmailValidator();
         Assertions.assertFalse(emailValidator.isValid("pascal@aignerch"));
     }
+
+    @Test
+    public void testEmailWithSpace() {
+        EmailValidator emailValidator = new EmailValidator();
+        Assertions.assertFalse(emailValidator.isValid("pascal@ aigner.ch"));
+    }
 }
