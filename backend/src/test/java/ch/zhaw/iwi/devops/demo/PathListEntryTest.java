@@ -6,83 +6,83 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class PathListEntryTest {
+class PathListEntryTest {
 
     private PathListEntry<Integer> entry;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         entry = new PathListEntry<>();
     }
 
     @Test
-    public void testSetAndGetName() {
+    void testSetAndGetName() {
         entry.setName("Test Name");
         assertEquals("Test Name", entry.getName());
     }
 
     @Test
-    public void testSetAndGetColor() {
+    void testSetAndGetColor() {
         entry.setColor("Red");
         assertEquals("Red", entry.getColor());
     }
 
     @Test
-    public void testSetAndGetIcon() {
+    void testSetAndGetIcon() {
         entry.setIcon("Test Icon");
         assertEquals("Test Icon", entry.getIcon());
     }
 
     @Test
-    public void testSetAndGetDetails() {
+    void testSetAndGetDetails() {
         entry.setDetails(List.of("Detail1", "Detail2"));
         assertEquals(List.of("Detail1", "Detail2"), entry.getDetails());
     }
 
     @Test
-    public void testSetAndGetUrl() {
+    void testSetAndGetUrl() {
         entry.setUrl("http://example.com");
         assertEquals("http://example.com", entry.getUrl());
     }
 
     @Test
-    public void testSetAndGetActive() {
+    void testSetAndGetActive() {
         entry.setActive(false);
         assertFalse(entry.isActive());
     }
 
     @Test
-    public void testSetAndGetOrder() {
+    void testSetAndGetOrder() {
         entry.setOrder(10.5f);
         assertEquals(10.5f, entry.getOrder());
     }
 
     @Test
-    public void testSetAndGetType() {
+    void testSetAndGetType() {
         entry.setType("Test Type");
         assertEquals("Test Type", entry.getType());
     }
 
     @Test
-    public void testSetAndGetPage() {
+    void testSetAndGetPage() {
         entry.setPage("Test Page");
         assertEquals("Test Page", entry.getPage());
     }
 
     @Test
-    public void testSetAndGetTooltip() {
+    void testSetAndGetTooltip() {
         entry.setTooltip("Test Tooltip");
         assertEquals("Test Tooltip", entry.getTooltip());
     }
 
     @Test
-    public void testSetAndGetForm() {
+    void testSetAndGetForm() {
         entry.setForm("Test Form");
         assertEquals("Test Form", entry.getForm());
     }
 
     @Test
-    public void testKeyEquality() {
+    void testKeyEquality() {
         entry.setKey(1, "key1");
         PathListEntry<Integer>.Key key1 = entry.getKey();
         
@@ -94,7 +94,7 @@ public class PathListEntryTest {
     }
 
     @Test
-    public void testEntryEquality() {
+    void testEntryEquality() {
         entry.setKey(1, "key1");
         entry.setName("Test Name");
         entry.setDetails(List.of("Detail1"));
@@ -108,7 +108,7 @@ public class PathListEntryTest {
     }
 
     @Test
-    public void testHashCode() {
+    void testHashCode() {
         entry.setKey(1, "key1");
         PathListEntry<Integer> otherEntry = new PathListEntry<>();
         otherEntry.setKey(1, "key1");
