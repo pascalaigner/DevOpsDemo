@@ -22,4 +22,10 @@ public class EmailValidatorTest {
         EmailValidator emailValidator = new EmailValidator();
         Assertions.assertFalse(emailValidator.isValid(""));
     }
+
+    @Test
+    public void testEmailWithDomain() {
+        EmailValidator emailValidator = new EmailValidator();
+        Assertions.assertFalse(emailValidator.isValid("pascal@"));
+    }
 }
