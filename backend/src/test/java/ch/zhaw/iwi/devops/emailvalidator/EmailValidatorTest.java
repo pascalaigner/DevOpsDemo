@@ -40,4 +40,10 @@ public class EmailValidatorTest {
         EmailValidator emailValidator = new EmailValidator();
         Assertions.assertFalse(emailValidator.isValid("pascal@ aigner.ch"));
     }
+
+    @Test
+    public void testEmailWithDotAtTheEnd() {
+        EmailValidator emailValidator = new EmailValidator();
+        Assertions.assertFalse(emailValidator.isValid("pascal@aigner.ch."));
+    }
 }
