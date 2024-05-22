@@ -16,4 +16,10 @@ public class EmailValidatorTest {
         EmailValidator emailValidator = new EmailValidator();
         Assertions.assertFalse(emailValidator.isValid(null));
     }
+
+    @Test
+    public void testEmptyEmail() {
+        EmailValidator emailValidator = new EmailValidator();
+        Assertions.assertFalse(emailValidator.isValid(""));
+    }
 }
