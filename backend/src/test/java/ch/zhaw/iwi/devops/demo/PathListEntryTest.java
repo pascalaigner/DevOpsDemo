@@ -115,4 +115,92 @@ class PathListEntryTest {
 
         assertEquals(entry.hashCode(), otherEntry.hashCode());
     }
+
+    @Test
+    public void testEqualsSameObject() {
+        PathListEntry<String> entry = new PathListEntry<>();
+        entry.setKey("key1", "name1");
+        assertTrue(entry.equals(entry));
+    }
+
+    @Test
+    public void testEqualsNull() {
+        PathListEntry<String> entry = new PathListEntry<>();
+        entry.setKey("key1", "name1");
+        assertFalse(entry.equals(null));
+    }
+
+    @Test
+    public void testEqualsDifferentClass() {
+        PathListEntry<String> entry = new PathListEntry<>();
+        entry.setKey("key1", "name1");
+        String otherClassObject = "I am a String";
+        assertFalse(entry.equals(otherClassObject));
+    }
+
+    @Test
+    public void testEqualsDifferentKey() {
+        PathListEntry<String> entry1 = new PathListEntry<>();
+        entry1.setKey("key1", "name1");
+
+        PathListEntry<String> entry2 = new PathListEntry<>();
+        entry2.setKey("key2", "name1");
+
+        assertFalse(entry1.equals(entry2));
+    }
+
+    @Test
+    public void testEqualsDifferentName() {
+        PathListEntry<String> entry1 = new PathListEntry<>();
+        entry1.setKey("key1", "name1");
+
+        PathListEntry<String> entry2 = new PathListEntry<>();
+        entry2.setKey("key1", "name2");
+
+        assertFalse(entry1.equals(entry2));
+    }
+
+    @Test
+    public void testEqualsSameKeyAndName() {
+        PathListEntry<String> entry1 = new PathListEntry<>();
+        entry1.setKey("key1", "name1");
+
+        PathListEntry<String> entry2 = new PathListEntry<>();
+        entry2.setKey("key1", "name1");
+
+        assertTrue(entry1.equals(entry2));
+    }
+
+    @Test
+    public void testEqualsKeyNull() {
+        PathListEntry<String> entry1 = new PathListEntry<>();
+        entry1.setKey(null, "name1");
+
+        PathListEntry<String> entry2 = new PathListEntry<>();
+        entry2.setKey(null, "name1");
+
+        assertTrue(entry1.equals(entry2));
+    }
+
+    @Test
+    public void testEqualsNameNull() {
+        PathListEntry<String> entry1 = new PathListEntry<>();
+        entry1.setKey("key1", null);
+
+        PathListEntry<String> entry2 = new PathListEntry<>();
+        entry2.setKey("key1", null);
+
+        assertTrue(entry1.equals(entry2));
+    }
+
+    @Test
+    public void testEqualsBothNull() {
+        PathListEntry<String> entry1 = new PathListEntry<>();
+        entry1.setKey(null, null);
+
+        PathListEntry<String> entry2 = new PathListEntry<>();
+        entry2.setKey(null, null);
+
+        assertTrue(entry1.equals(entry2));
+    }
 }
